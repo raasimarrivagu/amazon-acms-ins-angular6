@@ -1,0 +1,77 @@
+<head>
+  <meta name="author" content="Nishita">
+</head>
+<div class="container">
+  <h2>Raise an Issue</h2>
+  <form>
+    <div class="form-group" >
+      <label for="userName">Username</label>
+      <input type="text" class="form-control" name="username"  [(ngModel)]="ticket.userName" required>
+    </div>
+    <div class="form-group">
+      <label for="issueCategory">Issue Category</label>
+      <select class="form-control" name="issuecategory" [(ngModel)]="ticket.issueCategory" required>
+        <option value="System Crash">System Crash</option>
+        <option value="Dependency Outage">Dependency Outage</option>
+        <option value="Dependency Failure">Dependency Failure</option>
+        <option value="Dependency Failure">Dependency Failure</option>
+        <option value="Deployment">Deployment</option>
+        <option value="Console Issues">Console Issues</option>
+        <option value="Authentication Issues">Authentication Issues</option>
+        <option value="Operational Issues">Operational Issues</option>
+        <option value="Integration">Integration</option>
+        <option value="Connection Issues">Connection Issues</option>
+        <option value="Feedback Issues">Feedback Issues</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="priority">Priority</label>
+      <select class="form-control" name="priority" [(ngModel)]="ticket.priority" required>
+        <option value=1>1</option>
+        <option value=2>2</option>
+        <option value=3>3</option>
+        <option value=4>4</option>
+      </select>
+    </div>
+    
+    <button class="btn btn-success" (click)="raiseTicket()">Submit</button>
+    
+  </form>
+<br>
+<br>
+  <section class="main">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Issue Id</th>
+          <th>Issue Category</th>
+          <th>Created On</th>
+          <th>Status</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr >
+          <th scope="row">
+            {{finalTicket.id}}
+          </th>
+          <td>
+            {{ticket.issueCategory}}
+          </td>
+          <td>
+            {{finalTicket.createdOn}}
+          </td>
+          <td>
+            {{finalTicket.status}}
+          </td>
+          
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  
+  
+  
+</div>
+
+

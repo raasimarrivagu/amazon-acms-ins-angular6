@@ -1,0 +1,50 @@
+<head>
+  <meta name="author" content="Nishita">
+</head>
+<div class ="container">
+    <h2>Pending Tickets</h2>
+    <form>
+        <div class="form-group">
+          <label for="userName">Username</label>
+          <input type="text" class="form-control" id="username" name="userName" [(ngModel)]="userName" required>
+        </div>
+        
+        <button type="submit" class="btn btn-success" (click)="pendingTickets()">Submit</button>
+      
+      </form>
+</div>
+
+<div class="container">
+  <br>
+  Total number of tickets : {{tickets.length}}
+  <br>
+<section class="main">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Issue Id</th>
+          <th>Created On</th>
+          <th>Status</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let ticket of tickets">
+          <th scope="row">
+            {{ticket.id}}
+          </th>
+          <td>
+            {{ticket.createdOn}}
+          </td>
+          <td>
+            {{ticket.status}}
+          </td>
+          
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  </div>
+  
+
+
